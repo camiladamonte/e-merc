@@ -42,16 +42,19 @@
   <h1> Iniciar Sesión </h1> 
   <form>
     <label for="e-mail"></label>
-    <input type="email" placeholder="Correo Electrónico" required autofocus>
+    <input type="email" placeholder="Correo Electrónico" required >
     <br>
+    <label for="Name"></label>
+    <p><input type="text" placeholder="Name" id="usu" required></p>
     <label for="Password"></label>
-    <input type="password" placeholder="Contraseña" required autofocus>
+    <input type="password" placeholder="Contraseña" required >
     <br>
     <input type="checkbox" name="Recuerdame">Recuerdame
     <br>
-    <input type="submit" value="Entrar" onclick="location.href='///C:/Users/User/Desktop/e-merc/login.html'">
+    <button onclick="datos();" id="enter">Ingresar</button> 
   </form>
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
 </body>
+
 </html>

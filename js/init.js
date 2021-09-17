@@ -45,4 +45,11 @@ var getJSONData = function(url){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
+  let usuario = localStorage.getItem('Usuario'); //variable que contiene lo que esta en el localstorage
+  let puser = document.getElementById("nomusu"); //variable que contiene lo que esta en p
+
+  if (usuario) { //si se logeo
+    usuario = JSON.parse(usuario); //conviero lo que esta en el localstorage en objeto
+    puser.innerText += " " + usuario; //lo agrego a p
+  }
 });
