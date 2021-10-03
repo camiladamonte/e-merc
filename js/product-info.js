@@ -139,13 +139,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 function relacionado(lista){
     let cartas = "";
-    for (let i = 0; i<lista.relatedProducts.length; i++){
-        cartas += lista.relatedProducts[i].name
-        cartas += lista.relatedProducts[i].description
-        cartas += lista.relatedProducts[i].cost
+    let relacionados = lista[parseint(JSON.parse(localStorage.getItem('info')).idprod) - 1].relatedProducts;
+    for (let i=0; i<relacionados.length; i++){
+        cartas += lista[relacionados[i]].name
     }
-    document.getElementById("cartas").innerHTML = cartas;
+    document.getElementById("cartas").innerHTML += cartas;
 }
+
 
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCTS_URL).then(function(resultObj){
