@@ -131,3 +131,30 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }
     });
 });
+
+//entrega 4
+//agrego un nuevo get json data que lea la lista de todos los productos, 
+//luego desde ese get json data llama a esta nueva funcion que es "relacionado" la cual tiene un for con el largo del arreglo
+//luego compara el nombre de esa casilla del arreglo con los id de cada producto 
+
+function relacionado(lista){
+    let cartas = "";
+    for (let i = 0; i<lista.relatedProducts.length; i++){
+        cartas += lista.relatedProducts[i].name
+        cartas += lista.relatedProducts[i].description
+        cartas += lista.relatedProducts[i].cost
+    }
+    document.getElementById("cartas").innerHTML = cartas;
+}
+
+document.addEventListener("DOMContentLoaded", function (e) {
+    getJSONData(PRODUCTS_URL).then(function(resultObj){
+        if (resultObj.status === "ok"){
+            listado = resultObj.data;
+            relacionado(listado)
+        }else{
+            alert(resultObj.data);
+        }
+    });
+});
+

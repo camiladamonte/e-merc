@@ -7,7 +7,7 @@
         "currency": "USD",
         "imgSrc": "img/prod1.jpg",
         "soldCount": 14,
-        "relatedProducts": [2, 3, 4]
+        "relatedProducts": ["2", "3", "4"]
     },
     {
         "id":"2",
@@ -17,7 +17,7 @@
         "currency": "USD",
         "imgSrc": "img/prod2.jpg",
         "soldCount": 52,
-        "relatedProducts": [1, 3, 4]
+        "relatedProducts": ["1", "3", "4"]
     },
     {
         "id":"3",
@@ -27,7 +27,7 @@
         "currency": "USD",
         "imgSrc": "img/prod3.jpg",
         "soldCount": 25,
-        "relatedProducts": [1, 2, 4]
+        "relatedProducts": ["1", "2", "4"]
     },
     {
         "id":"4",
@@ -37,6 +37,6 @@
         "currency": "USD",
         "imgSrc": "img/prod4.jpg",
         "soldCount": 17,
-        "relatedProducts": [1, 2, 3]
+        "relatedProducts": ["1", "2", "3"]
     }
 ]
