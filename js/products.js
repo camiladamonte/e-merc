@@ -21,8 +21,8 @@ function Listado_Productos (array){
                 row += 'Nombre: ' + producto.name + '<br>';
                 row += 'Descripción: ' + producto.description + '<br>';
                 row += 'Precio: ' + producto.cost + '<br>';
-                row += '<img src="img/prod'+i+'.jpg" alt="" height="90" widht="90">';
-                row += '<button onclick="redir('+i+')">Más Información</button><br><br>';
+                row += '<img src="img/prod'+(i+1)+'.jpg" alt="" height="90" widht="90">';
+                row += '<button onclick="redir('+producto.id+')">Más Información</button><br><br>';
                 row += '<br><hr><br>' 
             };
         };
