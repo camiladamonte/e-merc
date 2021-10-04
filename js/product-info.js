@@ -18,9 +18,28 @@ function mostrar_info(prod_n){
     contenido += 'Categoría: ' + prod_n.category + '<br>';
 
     
-    fotitos +='<img src="img/prod'+(prod_n.id)+'_1.jpg" alt="" height="90" widht="90">'
-    fotitos +='<img src="img/prod'+(prod_n.id)+'_2.jpg" alt="" height="90" widht="90">'
-    fotitos +='<img src="img/prod'+(prod_n.id)+'_3.jpg" alt="" height="90" widht="90"><br><hr><br>'
+fotitos += `<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+    <img src="img/prod`+(prod_n.id)+`_1.jpg" alt="" height="600" widht="600">
+    </div>
+    <div class="carousel-item">
+    <img src="img/prod`+(prod_n.id)+`_2.jpg" alt="" height="600" widht="600">
+    </div>
+    <div class="carousel-item">
+    <img src="img/prod`+(prod_n.id)+`_3.jpg" alt="" height="600" widht="600">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>`
+
 
     document.getElementById("infor").innerHTML = contenido;
     document.getElementById("infor").innerHTML += fotitos;
@@ -132,18 +151,18 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 });
 
-//entrega 4
-//agrego un nuevo get json data que lea la lista de todos los productos, 
-//luego desde ese get json data llama a esta nueva funcion que es "relacionado" la cual tiene un for con el largo del arreglo
-//luego compara el nombre de esa casilla del arreglo con los id de cada producto 
+
+//entrega 4 
 
 function relacionado(lista){
-    let cartas = "";
+    let carta = "";
     let relacionados = lista[parseint(JSON.parse(localStorage.getItem('info')).idprod) - 1].relatedProducts;
     for (let i=0; i<relacionados.length; i++){
-        cartas += lista[relacionados[i]].name
+        carta += lista[relacionados[i]].name
+        carta += lista[relacionados[i]].description
+        carta += lista[relacionados[i]].cost
     }
-    document.getElementById("cartas").innerHTML += cartas;
+    document.getElementById("cartas").innerHTML += carta;
 }
 
 

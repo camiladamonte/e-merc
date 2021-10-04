@@ -4,6 +4,16 @@
 document.addEventListener("DOMContentLoaded", function(e){
     
 });
+
+document.addEventListener("DOMContentLoaded", function(e){
+    let usuario = localStorage.getItem('Usuario'); //variable que contiene lo que esta en el localstorage
+  
+    if (usuario) { //si se logeo
+      localStorage.removeItem('Usuario')
+    }
+  });
+
+  
 function datos(){
     var usuarios = document.getElementById("usu").value; //guarda en la variable lo que se conteste en la casilla en el localstorage
     let dato_usuario =JSON.stringify(usuarios); //lo convierto en un string
